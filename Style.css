@@ -72,7 +72,7 @@ body{
     background-size: cover;
     background-position: center;
 }
-.navbar {
+/* .navbar {
     position: relative;
     border-radius: 8vw;
     margin-block: 2vw;
@@ -123,4 +123,5 @@ body{
 }
 @media only screen and (min-width: 610px){
   
-}
+} */
+
