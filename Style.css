@@ -72,6 +72,14 @@ body{
     background-size: cover;
     background-position: center;
 }
+.navbar{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw;
+}
 /* .navbar {
     position: relative;
     border-radius: 8vw;
