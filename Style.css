@@ -1,6 +1,7 @@
-body{
+/*body {
   background-color: rgb(0, 0, 0);
-}
+  color: whitesmoke
+}*/
 
 .contact-container {
       max-width: 600px;
@@ -67,7 +68,7 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 #home {
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     background: url('background.jpg') no-repeat;
     background-size: cover;
     background-position: center;
