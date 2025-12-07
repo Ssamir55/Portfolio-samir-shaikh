@@ -1,136 +1,436 @@
-/*body {
-  background-color: rgb(0, 0, 0);
-  color: whitesmoke
-}*/
+/*
+ * Style.css - Traditional CSS
+ * Theme: Professional, Clean, Dark Mode
+ * Accent Color: #007bff (Blue)
+ */
 
-.contact-container {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+/* 1. Global & Base Styles */
+:root {
+    --bg-primary: #212529; /* Dark background */
+    --bg-secondary: #343a40; /* Slightly lighter background for cards/sections */
+    --text-light: #f8f9fa; /* Light text */
+    --text-dark: #dee2e6;
+    --accent-color: #007bff; /* Primary blue accent */
+    --accent-hover: #0056b3;
+    --font-stack: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-    .contact-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 6px;
-      color: #555;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 16px;
-      resize: vertical;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-color: #007BFF;
-      outline: none;
-    }
-
-    button {
-      display: inline-block;
-      background-color: #007BFF;
-      color: #fff;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-* {
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+    font-family: var(--font-stack);
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
-#home {
-    /*min-height: 100vh;*/
-    background: url('background.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
+
+html {
+    scroll-behavior: smooth;
 }
-.navbar{
+
+.App {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+h4, h2 {
+    color: var(--text-light);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--accent-hover);
+}
+
+/* 2. Section Containers */
+#home, #experience, #project, #about, #contact {
+    padding: 80px 5%;
+    min-height: 80vh;
+}
+
+#experience {
+    background-color: var(--bg-secondary);
+}
+
+/* 3. Navbar Styling */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2vw;
+    padding: 15px 5%;
+    background-color: rgba(33, 37, 41, 0.95); /* Semi-transparent dark background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-/* .navbar {
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.navbar_nag_to_pages a {
+    margin-left: 25px;
+    font-size: 1rem;
+    color: var(--text-dark);
+    padding: 5px 0;
     position: relative;
-    border-radius: 8vw;
-    margin-block: 2vw;
-    width: 100%;
-    padding: 20px 100px;
-    background: rgba(255, 255, 255, .1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    backdrop-filter: blur(10vw);
-    border-bottom: 2px solid rgba(255, 255, 255, .2);
 }
-.navbar::before {
+
+.navbar_nag_to_pages a:after {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar_nag_to_pages a:hover:after {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
-    transition: .5s;
 }
-.navbar:hover::before {
-    left: 100%;
+
+/* 4. Home Section */
+.home_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px; /* Space for the name */
 }
-.logo {
-    color: #fff;
-    font-size: 25px;
-    text-decoration: none;
+
+.home_content img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5); /* Glowing effect */
+    background-color: var(--bg-secondary); /* Placeholder background */
+}
+
+.home_content p span {
+    display: block;
+    margin: 5px 0;
+}
+
+.home_content p span:nth-child(1) {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+
+.home_content p span:nth-child(2) {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--text-light);
+}
+
+.home_content p span:nth-child(3) {
+    font-size: 2rem;
     font-weight: 600;
-    cursor: default;
+    color: var(--accent-color);
+    margin-bottom: 25px;
 }
-.navbar_nag_to_pages a {
-    color: #fff;
-    font-size: 18px;
-    text-decoration: none;
-    margin-left: 35px;
-    transition: .3s;
+
+.btn_cv {
+    padding: 12px 30px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    content: 'Download CV'; /* Set button text via content property */
 }
-.navbar_nag_to_pages a:hover {
-    color: rgb(112, 112, 112);
-    border-radius: 8dvw;
-    margin-block: 2vw;
-}    
 
-@media only screen and (max-width: 600px){
-
+.btn_cv:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
 }
-@media only screen and (min-width: 610px){
-  
-} */
 
+/* 5. Experience Section */
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-light);
+}
+
+.experience_container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px;
+    background-color: var(--bg-primary);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.experience_container:hover {
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.experience_container img {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    /* Placeholder for icon/animation */
+    background-color: var(--accent-color);
+    border-radius: 5px;
+    padding: 8px;
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f8f9fa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 17l10 5 10-5M2 12l10 5 10-5M12 2l10 5-10 5-10-5 10-5z'/%3E%3C/svg%3E");
+}
+
+.experience_details {
+    flex-grow: 1;
+}
+
+.experience_container_title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.experience_container_year {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    margin-top: 5px;
+}
+
+.experience_container_descprition {
+    margin-top: 10px;
+    color: var(--text-dark);
+}
+
+
+/* 6. Project Section */
+.project_main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project_container {
+    padding: 25px;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--bg-secondary);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.project_container:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.4);
+}
+
+.project_container_title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.project_container_descption {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    min-height: 80px; /* Ensure visual consistency */
+}
+
+.project_container_github, .project_container_run_code {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.project_container_github {
+    background-color: #6c757d; /* Gray */
+    color: var(--text-light);
+}
+
+.project_container_run_code {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+}
+
+.project_container_github:hover {
+    background-color: #5a6268;
+}
+
+.project_container_run_code:hover {
+    background-color: var(--accent-hover);
+}
+
+/* 7. About Section */
+#about {
+    text-align: center;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+/* 8. Contact Section */
+#contact {
+    background-color: var(--bg-secondary);
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: var(--bg-primary);
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.contact-container h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #495057; /* Border color */
+    border-radius: 5px;
+    background-color: #495057;
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    box-sizing: border-box; /* Important for padding/width calculation */
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+.contact-container button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-container button[type="submit"]:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+/* 9. Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar_nag_to_pages {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .navbar_nag_to_pages a {
+        margin-left: 0;
+    }
+
+    .home_content p span:nth-child(2) {
+        font-size: 3rem;
+    }
+
+    .home_content p span:nth-child(3) {
+        font-size: 1.5rem;
+    }
+
+    .experience_container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .experience_container img {
+        margin-bottom: 15px;
+    }
+
+    .project_main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Re-adding a general section title style for consistency */
+#experience::before,
+#project::before,
+#about::before,
+#contact::before {
+    content: attr(id);
+    text-transform: capitalize;
+    display: block;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#home::before {
+    content: none; /* Hide title for home section */
+}
+
+/* Adding a separator line for section titles */
+#experience::before,
+#project::before,
+#about::before,
+#contact::before {
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+    border-bottom: 3px solid var(--accent-color);
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
