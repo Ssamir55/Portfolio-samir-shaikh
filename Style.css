@@ -49,7 +49,7 @@ a:hover {
 
 /* 2. Section Containers */
 #home, #experience, #project, #about, #contact {
-    padding: 80px 5%;
+    padding: 20px 5%;
     min-height: 80vh;
 }
 
