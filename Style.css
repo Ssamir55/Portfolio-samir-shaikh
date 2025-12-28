@@ -285,6 +285,7 @@ a:hover {
 /* 7. About Section */
 #about {
     text-align: center;
+    color: var(--bg-secondary);
 }
 
 #about p {
