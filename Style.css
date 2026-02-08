@@ -102,11 +102,11 @@ a:hover {
 /* 4. Home Section */
 .home_content {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
-    padding-top: 100px; /* Space for the name */
+    padding-top: 6vh; /* Space for the name */
 }
 
 .home_content img {
@@ -317,7 +317,7 @@ a:hover {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 3vh;
 }
 
 .form-group label {
@@ -431,7 +431,9 @@ a:hover {
     padding-bottom: 10px;
     margin-bottom: 50px;
     border-bottom: 3px solid var(--accent-color);
-    width: 150px;
+   width: fit-content;
     margin-left: auto;
     margin-right: auto;
 }
+
+
